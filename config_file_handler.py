@@ -50,7 +50,6 @@ def read_config(config_file_name):
                  'analyzer_port': '22016',
                  'analyzer_query': 'raidStorage[=name rx .*]/raidLdev[=ldevNaming rx .*]&[=usedCapacityGB rx .*]&[=ldevCapacityGB rx .*]&[=name rx .*]/raidOwner[=name rx .*]',
                  'time_difference_in_hours': 24,
-                 'blank_host_group_value': 'Not Mapped',
                  'analyzer_protocol': 'https'}
 
     data_writer = Write_File(config_file_name)
