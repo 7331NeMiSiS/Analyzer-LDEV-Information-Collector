@@ -11,7 +11,7 @@ import urllib3
 
 urllib3.disable_warnings()
 
-debug = True
+debug = False
 
 
 def set_logging():
@@ -124,7 +124,8 @@ def unpack_nexted_dictionary_n_analyzer_response(nested_dictionary, my_new_volum
         my_new_volume_details[my_new_name] = nested_dictionary['signature'].split("#")[1].replace("^", ":")
       else:
         my_new_volume_details[nested_dictionary[each_heading]['name']] = nested_dictionary[each_heading]['data']
-    logger.info(f"Adding this to my report: {my_new_volume_details}")
+    if debug:
+      logger.info(f"Adding this to my report: {my_new_volume_details}")
 
     my_report.append(my_new_volume_details.copy())
     my_new_volume_details.clear()
